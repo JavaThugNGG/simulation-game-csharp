@@ -15,4 +15,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Admin\Desktop\Simulation\Simulation\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Admin\Desktop\Simulation\Simulation\.editorconfig" />
+  </ItemGroup>
+
 </Project>
