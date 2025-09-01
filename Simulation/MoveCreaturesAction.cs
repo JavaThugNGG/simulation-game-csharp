@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace Simulation
+﻿namespace Simulation
 {
     internal class MoveCreaturesAction
     {

@@ -1,10 +1,10 @@
 ﻿namespace Simulation
 {
-    internal class PredatorSpawnAction
+    internal class PredatorSpawnAction : CreatureSpawnAction
     {
         private static readonly string PredatorEmoji = "\uD83D\uDC3A";
 
-        internal void Perform(IDictionary<Coordinates, Entity> map, List<Entity> generatedEntities)
+        internal override void Perform(IDictionary<Coordinates, Entity> map, List<Entity> generatedEntities)
         {
             Random random = new Random();
             int row = random.Next(SimulationManager.WorldRows);
