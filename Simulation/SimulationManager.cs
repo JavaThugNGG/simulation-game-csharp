@@ -1,6 +1,6 @@
 ﻿namespace Simulation
 {
-    internal class SimulationManager//напишешь что весь жизненный цикл хуйнул в коммит
+    internal class SimulationManager
     {
         public static readonly int WorldRows = 10;
         public static readonly int WorldColumns = 20;
@@ -12,7 +12,7 @@
 
         private readonly IList<CreatureSpawnAction> _creatureInitActions = new List<CreatureSpawnAction>();
         private readonly IList<PlantSpawnAction> _plantInitActions = new List<PlantSpawnAction>();
-        private readonly IList<MoveCreaturesAction> _turActions = new List<MoveCreaturesAction>();
+        private readonly IList<MoveCreaturesAction> _turnActions = new List<MoveCreaturesAction>();
 
         private volatile bool _isEnd = false;
 
@@ -26,10 +26,23 @@
         internal void InitializeSimulation()
         {
             _creatureInitActions.Add(new HerbivoreSpawnAction());
+            _creatureInitActions.Add(new PredatorSpawnAction());
+            _plantInitActions.Add(new GrassSpawnAction());
+            _plantInitActions.Add(new TreeSpawnAction());
+            _turnActions.Add(new MoveCreaturesAction());
 
+            foreach (PlantSpawnAction action in _plantInitActions)
+            {
+                action.Perform(_map, _generatedEntities);
+            }
+
+            foreach (CreatureSpawnAction action in _creatureInitActions)
+            {
+                action.Perform(_map, _generatedEntities);
+            }
         }
 
-        private void StartSimulation()
+        internal void StartSimulation()
         {
             if (!IsEnd)
             {
@@ -39,7 +52,30 @@
             }
         }
 
+        private void MoveCreations()
+        {
+            foreach (MoveCreaturesAction action in _turnActions)
+            {
+                action.Perform(_generatedEntities, _pathFinder);
+            }
+        }
 
+        private bool IsAllHerbivoresDead()
+        {
+            foreach (Entity entity in _map.Values)
+            {
+                if (entity is Herbivore)
+                {
+                    return false;
+                }
+            }
 
+            return true;
+        }
+
+        internal void PrintLast()
+        {
+            _worldPrinter.Print(_map);
+        }
     }
 }
