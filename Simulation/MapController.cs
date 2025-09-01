@@ -4,13 +4,13 @@
     {
         private readonly IDictionary<Coordinates, Entity> _map;
 
-        internal MapController(IDictionary<Coordinates, Entity> map, List<Entity> generatedEntities)
+        internal MapController(IDictionary<Coordinates, Entity> map, IList<Entity> generatedEntities)
         {
             _map = map;
             FillMap(generatedEntities);
         }
 
-        private void FillMap(List<Entity> generatedEntities)
+        private void FillMap(IList<Entity> generatedEntities)
         {
             foreach (Entity entity in generatedEntities)
             {

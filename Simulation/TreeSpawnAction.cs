@@ -4,7 +4,7 @@
     {
         private static readonly string TreeEmoji = "\uD83C\uDF33";
 
-        internal override void Perform(IDictionary<Coordinates, Entity> map, List<Entity> generatedEntities)
+        internal override void Perform(IDictionary<Coordinates, Entity> map, IList<Entity> generatedEntities)
         {
             Random random = new Random();
             int row = random.Next(SimulationManager.WorldRows);

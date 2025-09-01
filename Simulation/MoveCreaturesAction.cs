@@ -4,7 +4,7 @@
     {
         private static readonly int PredatorMoveSteps = 2;
 
-        internal void Perform(List<Entity> generatedEntities, PathFinder pathFinder)
+        internal void Perform(IList<Entity> generatedEntities, PathFinder pathFinder)
         {
             foreach (Entity entity in generatedEntities)
             {
@@ -34,7 +34,7 @@
             }
         }
 
-        private void MovePredator(Creature predator, List<Coordinates> path)
+        private void MovePredator(Creature predator, IList<Coordinates> path)
         {
             for (int i = 0; i < PredatorMoveSteps; i++)
             {
@@ -48,7 +48,7 @@
             }
         }
 
-        private void MoveHerbivore(Creature herbivore, List<Coordinates> path)
+        private void MoveHerbivore(Creature herbivore, IList<Coordinates> path)
         {
             Coordinates newCoordinates = path.First();
             path.RemoveAt(0);
