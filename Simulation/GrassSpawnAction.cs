@@ -1,6 +1,6 @@
 ﻿namespace Simulation
 {
-    internal class GrassSpawnAction : CreatureSpawnAction
+    internal class GrassSpawnAction : PlantSpawnAction
     {
         private static readonly string GrassEmoji = "\uD83C\uDF3F";
 
