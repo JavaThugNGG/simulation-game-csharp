@@ -2,9 +2,9 @@
 {
     internal class PauseSimulationCommand : ICommand
     {
-        private readonly Object _printLock;
+        private readonly object _printLock;
 
-        internal PauseSimulationCommand(Object printLock)
+        internal PauseSimulationCommand(object printLock)
         {
             _printLock = printLock;
         }

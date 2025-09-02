@@ -2,10 +2,10 @@
 {
     internal class ResumeSimulationCommand : ICommand
     {
-        private readonly Object _printLock;
-        private readonly Object _pauseLock;
+        private readonly object _printLock;
+        private readonly object _pauseLock;
 
-        internal ResumeSimulationCommand(Object printLock, Object pauseLock)
+        internal ResumeSimulationCommand(object printLock, object pauseLock)
         {
             _printLock = printLock;
             _pauseLock = pauseLock;
