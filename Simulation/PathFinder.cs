@@ -1,4 +1,6 @@
-﻿namespace Simulation
+﻿using System.Threading.Channels;
+
+namespace Simulation
 {
     internal class PathFinder
     {
@@ -12,7 +14,7 @@
 
         internal List<Coordinates> FindPathToVictim(Creature creature)
         {
-            _start = creature.Coordinates;
+            _start = creature.Coordinates;   //Координата - null, либо не было проинициализирована, либо хуево передалась
 
             if (creature is Predator)
             {
@@ -46,7 +48,7 @@
 
                 foreach (Coordinates neighbor in GetNeighborCells(current))
                 {
-                    if (!visited.Contains(neighbor) && IsValidMove(neighbor, goalType))
+                    if (!visited.Contains(neighbor) && IsValidMove(neighbor, goalType))//Вот сюда не заходит   IsValidMove что-то не то отдает
                     {
                         queue.Enqueue(neighbor);
                         visited.Add(neighbor);
@@ -78,8 +80,8 @@
             }
             else
             {
-                Console.WriteLine($"При вытаскивании из мапы по индексу {neighbor} в методе {nameof(IsValidMove)} произошла ошибка! Нет такого ключа.");
-                return false;
+                Console.WriteLine($"При вытаскивании из мапы по индексу {neighbor} в методе {nameof(IsValidMove)} произошла ошибка! Нет такого ключа.");//это не ошибка
+                return true;
             }
         }
 
@@ -139,6 +141,12 @@
         
             }
             path.Reverse();
+            Console.WriteLine("Путь до цели:");
+
+            foreach (var coord in path)
+            {
+                Console.WriteLine(coord); // Путь вычисляется правильно, все хорошо
+            }
             return path;
         }
     }

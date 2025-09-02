@@ -9,6 +9,7 @@
         private readonly PathFinder _pathFinder;
         private readonly IList<Entity> _generatedEntities = new List<Entity>();
         private readonly WorldPrinter _worldPrinter = new WorldPrinter();
+        private readonly MapController _mapController;
 
         private readonly IList<CreatureSpawnAction> _creatureInitActions = new List<CreatureSpawnAction>();
         private readonly IList<PlantSpawnAction> _plantInitActions = new List<PlantSpawnAction>();
@@ -19,6 +20,8 @@
         internal SimulationManager()
         {
             _pathFinder = new PathFinder(_map);
+            InitializeSimulation();
+            _mapController = new MapController(_map, _generatedEntities);
         }
 
         internal bool IsEnd => _isEnd;

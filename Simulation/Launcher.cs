@@ -12,8 +12,8 @@
 
         internal static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             SimulationManager simulationManager = new SimulationManager();
-            simulationManager.InitializeSimulation();
             Thread simulationThread = CreateSimulationThread(simulationManager);
 
             ICommand startCommand = new StartSimulationCommand(simulationThread);

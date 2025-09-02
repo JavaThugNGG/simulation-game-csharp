@@ -15,9 +15,9 @@
             }
         }
 
-        private void HandleCreatureMove(PathFinder pathFinder, Creature creature)
+        private void HandleCreatureMove(PathFinder pathFinder, Creature creature) 
         {
-            List<Coordinates> path = pathFinder.FindPathToVictim(creature);
+            List<Coordinates> path = pathFinder.FindPathToVictim(creature);  //нормальный путь возвращается
 
             if (path.Count == 0)
             {
@@ -26,7 +26,7 @@
 
             if (creature is Predator)
             {
-                MovePredator(creature, path);
+                MovePredator(creature, path);    //видимо эти методы фонят
             }
             else if (creature is Herbivore)
             {
