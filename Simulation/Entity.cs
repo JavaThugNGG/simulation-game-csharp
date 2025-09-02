@@ -8,9 +8,9 @@
             Figure = figure;
         }
 
-        public Coordinates Coordinates { get; set; }
+        internal Coordinates Coordinates { get; set; }
 
-        public string Figure { get; init; }
+        internal string Figure { get; init; }
 
         public override string ToString() => Figure;
     }

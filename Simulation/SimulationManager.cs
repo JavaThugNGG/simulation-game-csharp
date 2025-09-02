@@ -2,8 +2,8 @@
 {
     internal class SimulationManager
     {
-        public static readonly int WorldRows = 10;
-        public static readonly int WorldColumns = 20;
+        internal static readonly int WorldRows = 10;
+        internal static readonly int WorldColumns = 20;
 
         private readonly IDictionary<Coordinates, Entity> _map = new Dictionary<Coordinates, Entity>();
         private readonly PathFinder _pathFinder;
