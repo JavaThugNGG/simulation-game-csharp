@@ -1,4 +1,6 @@
-﻿namespace Simulation
+﻿using Simulation.Commands;
+
+namespace Simulation
 {
     internal class Menu
     {

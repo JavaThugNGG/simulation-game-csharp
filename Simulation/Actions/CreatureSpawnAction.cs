@@ -1,4 +1,6 @@
-﻿namespace Simulation
+﻿using Simulation.Entities;
+
+namespace Simulation.Actions
 {
     internal abstract class CreatureSpawnAction
     {

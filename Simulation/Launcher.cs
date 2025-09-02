@@ -1,4 +1,6 @@
-﻿namespace Simulation
+﻿using Simulation.Commands;
+
+namespace Simulation
 {
     internal class Launcher
     {
@@ -65,7 +67,7 @@
                     IsSimulationEnd = simulationManager.IsEnd;
                 }
 
-                simulationManager.PrintLast();
+                simulationManager.PrintLastMapFrame();
                 IsExit = true;
                 Console.WriteLine("Симуляция закончена! Введите цифру от 1 до 3 для выхода");
             });

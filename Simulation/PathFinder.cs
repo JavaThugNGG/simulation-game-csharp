@@ -1,4 +1,6 @@
-﻿namespace Simulation
+﻿using Simulation.Entities;
+
+namespace Simulation
 {
     internal class PathFinder
     {

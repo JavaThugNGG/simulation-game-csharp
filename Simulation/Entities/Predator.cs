@@ -1,4 +1,4 @@
-﻿namespace Simulation
+﻿namespace Simulation.Entities
 {
     internal class Predator : Creature
     {

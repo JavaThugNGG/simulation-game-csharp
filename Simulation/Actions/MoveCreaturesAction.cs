@@ -1,4 +1,6 @@
-﻿namespace Simulation
+﻿using Simulation.Entities;
+
+namespace Simulation.Actions
 {
     internal class MoveCreaturesAction
     {
@@ -36,7 +38,7 @@
 
         private void MovePredator(Creature predator, IList<Coordinates> path)
         {
-            for (int i = 0; i < PredatorMoveSteps; i++)
+            for (var i = 0; i < PredatorMoveSteps; i++)
             {
                 if (path.Count == 0)
                 {

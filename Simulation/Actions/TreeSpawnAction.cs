@@ -1,4 +1,6 @@
-﻿namespace Simulation
+﻿using Simulation.Entities;
+
+namespace Simulation.Actions
 {
     internal class TreeSpawnAction : PlantSpawnAction
     {
@@ -7,8 +9,8 @@
         internal override void Perform(IDictionary<Coordinates, Entity> map, IList<Entity> generatedEntities)
         {
             Random random = new Random();
-            int row = random.Next(SimulationManager.WorldRows);
-            int column = random.Next(SimulationManager.WorldColumns);
+            var row = random.Next(SimulationManager.WorldRows);
+            var column = random.Next(SimulationManager.WorldColumns);
             Coordinates spawnCoordinates = new Coordinates(row, column);
             Tree tree = new Tree(spawnCoordinates, TreeEmoji);
 

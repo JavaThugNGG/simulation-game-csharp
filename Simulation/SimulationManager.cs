@@ -1,4 +1,7 @@
-﻿namespace Simulation
+﻿using Simulation.Actions;
+using Simulation.Entities;
+
+namespace Simulation
 {
     internal class SimulationManager
     {
@@ -76,7 +79,7 @@
             return true;
         }
 
-        internal void PrintLast()
+        internal void PrintLastMapFrame()
         {
             _worldPrinter.Print(_map);
         }

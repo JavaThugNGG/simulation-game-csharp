@@ -1,4 +1,4 @@
-﻿namespace Simulation
+﻿namespace Simulation.Commands
 {
     internal class PauseSimulationCommand : ICommand
     {
