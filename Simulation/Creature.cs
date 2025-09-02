@@ -5,7 +5,7 @@
         internal delegate void MoveHandler(object sender, Coordinates oldCoordinates, Coordinates newCoordinates);
         internal event MoveHandler Moved;
 
-        internal Creature(Coordinates coordinates, string figure) : base(coordinates, figure) { }//предупреждение уйдет когда на событие подпишутся
+        internal Creature(Coordinates coordinates, string figure) : base(coordinates, figure) { }
 
         internal void MakeMove(Coordinates newCoordinates)
         {

@@ -1,6 +1,4 @@
-﻿using System.Threading.Channels;
-
-namespace Simulation
+﻿namespace Simulation
 {
     internal class PathFinder
     {
@@ -14,7 +12,7 @@ namespace Simulation
 
         internal List<Coordinates> FindPathToVictim(Creature creature)
         {
-            _start = creature.Coordinates;   //Координата - null, либо не было проинициализирована, либо хуево передалась
+            _start = creature.Coordinates;
 
             if (creature is Predator)
             {
@@ -48,7 +46,7 @@ namespace Simulation
 
                 foreach (Coordinates neighbor in GetNeighborCells(current))
                 {
-                    if (!visited.Contains(neighbor) && IsValidMove(neighbor, goalType))//Вот сюда не заходит   IsValidMove что-то не то отдает
+                    if (!visited.Contains(neighbor) && IsValidMove(neighbor, goalType))
                     {
                         queue.Enqueue(neighbor);
                         visited.Add(neighbor);
@@ -145,7 +143,7 @@ namespace Simulation
 
             foreach (var coord in path)
             {
-                Console.WriteLine(coord); // Путь вычисляется правильно, все хорошо
+                Console.WriteLine(coord);
             }
             return path;
         }
