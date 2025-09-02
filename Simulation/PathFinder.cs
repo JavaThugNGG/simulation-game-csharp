@@ -80,7 +80,6 @@ namespace Simulation
             }
             else
             {
-                Console.WriteLine($"При вытаскивании из мапы по индексу {neighbor} в методе {nameof(IsValidMove)} произошла ошибка! Нет такого ключа.");//это не ошибка
                 return true;
             }
         }
@@ -92,7 +91,6 @@ namespace Simulation
                 return goalType.IsInstanceOfType(currentEntity);
             }
             
-            Console.WriteLine($"При вытаскивании из мапы по индексу {current} в методе {nameof(IsGoalAtCoordinates)} произошла ошибка! Нет такого ключа.");
             return false;
         }
 
@@ -141,12 +139,6 @@ namespace Simulation
         
             }
             path.Reverse();
-            Console.WriteLine("Путь до цели:");
-
-            foreach (var coord in path)
-            {
-                Console.WriteLine(coord);
-            }
             return path;
         }
     }
