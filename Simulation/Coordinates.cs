@@ -4,6 +4,6 @@
     {
         public override string ToString() => $"{Row} {Column}";
 
-        public int CompareTo(Coordinates other) => (Row, Column).CompareTo((other.Row, other.Column));
+        public int CompareTo(Coordinates? other) => (Row, Column).CompareTo((other!.Row, other.Column));
     }
 }
